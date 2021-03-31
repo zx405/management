@@ -1,0 +1,748 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": 123456,
+      "roleState": true,
+      "default": true,
+      "region": "全球",
+      "roleId": 1
+    },
+    {
+      "username": "bbb",
+      "password": "456",
+      "roleState": true,
+      "default": false,
+      "region": "亚洲",
+      "roleId": 2,
+      "id": 2
+    },
+    {
+      "username": "aaa",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "南极洲",
+      "roleId": "3",
+      "id": 3
+    },
+    {
+      "username": "ccc",
+      "password": "123",
+      "roleState": true,
+      "default": true,
+      "region": "全球",
+      "roleId": 1,
+      "id": 4
+    },
+    {
+      "username": "zx",
+      "password": "123456",
+      "region": "欧洲",
+      "roleId": "2",
+      "roleState": true,
+      "default": false,
+      "id": 5
+    },
+    {
+      "username": "fffff",
+      "password": "123456",
+      "region": "南美洲",
+      "roleId": "3",
+      "roleState": true,
+      "default": false,
+      "id": 6
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "roleName": "超级管理员",
+      "roleType": 1,
+      "rights": [
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/right-manage",
+        "/right-manage/role/list",
+        "/right-manage/right/list",
+        "/right-manage/role/update",
+        "/right-manage/role/delete",
+        "/right-manage/right/update",
+        "/right-manage/right/delete",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/news-manage/category",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset",
+        "/home"
+      ]
+    },
+    {
+      "id": 2,
+      "roleName": "区域管理员",
+      "roleType": 2,
+      "rights": [
+        "/home",
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/news-manage/category",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    },
+    {
+      "id": 3,
+      "roleName": "区域编辑",
+      "roleType": 3,
+      "rights": [
+        "/home",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": 3,
+      "title": "添加用户",
+      "rightId": 2,
+      "key": "/user-manage/add",
+      "grade": 2
+    },
+    {
+      "id": 4,
+      "title": "删除用户",
+      "rightId": 2,
+      "key": "/user-manage/delete",
+      "grade": 2
+    },
+    {
+      "id": 5,
+      "title": "修改用户",
+      "rightId": 2,
+      "key": "/user-manage/update",
+      "grade": 2
+    },
+    {
+      "id": 6,
+      "title": "用户列表",
+      "rightId": 2,
+      "key": "/user-manage/list",
+      "pagepermisson": true,
+      "grade": 2
+    },
+    {
+      "id": 8,
+      "title": "角色列表",
+      "rightId": 7,
+      "key": "/right-manage/role/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 9,
+      "title": "权限列表",
+      "rightId": 7,
+      "key": "/right-manage/right/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 10,
+      "title": "修改角色",
+      "rightId": 7,
+      "key": "/right-manage/role/update",
+      "grade": 2
+    },
+    {
+      "id": 11,
+      "title": "删除角色",
+      "rightId": 7,
+      "key": "/right-manage/role/delete",
+      "grade": 2
+    },
+    {
+      "id": 12,
+      "title": "修改权限",
+      "rightId": 7,
+      "key": "/right-manage/right/update",
+      "grade": 2
+    },
+    {
+      "id": 13,
+      "title": "删除权限",
+      "rightId": 7,
+      "key": "/right-manage/right/delete",
+      "grade": 2
+    },
+    {
+      "id": 15,
+      "title": "新闻列表",
+      "rightId": 14,
+      "key": "/news-manage/list",
+      "grade": 2
+    },
+    {
+      "id": 16,
+      "title": "撰写新闻",
+      "rightId": 14,
+      "key": "/news-manage/add",
+      "grade": 2,
+      "pagepermisson": 1
+    },
+    {
+      "id": 17,
+      "title": "新闻更新",
+      "rightId": 14,
+      "key": "/news-manage/update/:id",
+      "grade": 2,
+      "routepagepermisson": 1
+    },
+    {
+      "id": 18,
+      "title": "新闻预览",
+      "rightId": 14,
+      "key": "/news-manage/preview/:id",
+      "grade": 2,
+      "routepagepermisson": 1
+    },
+    {
+      "id": 19,
+      "title": "草稿箱",
+      "rightId": 14,
+      "key": "/news-manage/draft",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 20,
+      "title": "新闻分类",
+      "rightId": 14,
+      "key": "/news-manage/category",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 22,
+      "title": "审核新闻",
+      "rightId": 21,
+      "key": "/audit-manage/audit",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 23,
+      "title": "审核列表",
+      "rightId": 21,
+      "key": "/audit-manage/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 25,
+      "title": "待发布",
+      "rightId": 24,
+      "key": "/publish-manage/unpublished",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 26,
+      "title": "已发布",
+      "rightId": 24,
+      "key": "/publish-manage/published",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 27,
+      "title": "已下线",
+      "rightId": 24,
+      "key": "/publish-manage/sunset",
+      "pagepermisson": 1,
+      "grade": 2
+    }
+  ],
+  "rights": [
+    {
+      "id": 1,
+      "title": "首页",
+      "key": "/home",
+      "pagepermisson": true,
+      "grade": 1
+    },
+    {
+      "id": 2,
+      "title": "用户管理",
+      "key": "/user-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 7,
+      "title": "权限管理",
+      "key": "/right-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 14,
+      "title": "新闻管理",
+      "key": "/news-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 21,
+      "title": "审核管理",
+      "key": "/audit-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 24,
+      "title": "发布管理",
+      "key": "/publish-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "时事新闻",
+      "value": "时事新闻"
+    },
+    {
+      "id": 2,
+      "title": "环球经济",
+      "value": "环球经济"
+    },
+    {
+      "id": 3,
+      "title": "科学技术",
+      "value": "科学技术"
+    },
+    {
+      "id": 4,
+      "title": "军事世界",
+      "value": "军事世界"
+    },
+    {
+      "id": 5,
+      "title": "世界体育",
+      "value": "世界体育"
+    },
+    {
+      "id": 6,
+      "title": "生活理财",
+      "value": "生活理财"
+    }
+  ],
+  "regions": [
+    {
+      "id": 1,
+      "title": "亚洲",
+      "value": "亚洲"
+    },
+    {
+      "id": 2,
+      "title": "欧洲",
+      "value": "欧洲"
+    },
+    {
+      "id": 3,
+      "title": "北美洲",
+      "value": "北美洲"
+    },
+    {
+      "id": 4,
+      "title": "南美洲",
+      "value": "南美洲"
+    },
+    {
+      "id": 5,
+      "title": "非洲",
+      "value": "非洲"
+    },
+    {
+      "id": 6,
+      "title": "大洋洲",
+      "value": "大洋洲"
+    },
+    {
+      "id": 7,
+      "title": "南极洲",
+      "value": "南极洲"
+    }
+  ],
+  "news": [
+    {
+      "title": "dwadadawd",
+      "categoryId": 6,
+      "content": "<p>433</p>\n",
+      "region": "",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615199783270,
+      "id": 6,
+      "view": 62,
+      "star": 15,
+      "publishTime": 1615199811184
+    },
+    {
+      "title": "aaaa",
+      "categoryId": 1,
+      "content": "<p>dwa</p>\n",
+      "region": "",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1615201249728,
+      "star": 1,
+      "view": 9,
+      "id": 7,
+      "publishTime": 1615201256519
+    },
+    {
+      "title": "bbb",
+      "categoryId": 2,
+      "content": "<p>fff</p>\n",
+      "region": "",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1615201692474,
+      "star": 0,
+      "view": 2,
+      "id": 8,
+      "publishTime": 1615201697390
+    },
+    {
+      "title": "adwa",
+      "categoryId": 4,
+      "content": "<p>dwadwa</p>\n",
+      "region": "",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615214066858,
+      "star": 202,
+      "view": 106,
+      "id": 9,
+      "publishTime": 1615214073329
+    },
+    {
+      "title": "zzzzz",
+      "categoryId": 5,
+      "content": "<p>dwa</p>\n",
+      "region": "",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615280253077,
+      "star": 0,
+      "view": 1,
+      "id": 10,
+      "publishTime": 1615280290972
+    },
+    {
+      "title": "zzzzz",
+      "categoryId": 2,
+      "content": "<p>dwa</p>\n",
+      "region": "南极洲",
+      "author": "aaa",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615289959791,
+      "star": 0,
+      "view": 7,
+      "id": 12,
+      "publishTime": 1615289965558
+    },
+    {
+      "title": "顶顶顶挂挂碍故",
+      "categoryId": "1",
+      "content": "<p>hhhhhhhhhhhhh</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1615881207967,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 15
+    },
+    {
+      "title": "顶顶顶",
+      "categoryId": "1",
+      "content": "<p>ffffffffffffffffffghyrtgthyju6ytghjyt</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1615881221854,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 17
+    },
+    {
+      "title": "大家都好",
+      "categoryId": "1",
+      "content": "<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">视觉、听觉、嗅觉、味觉、触觉是人类最基本的五种感觉，其中视觉最为关键。因为随着物种进化，眼睛作为人类最为精细、复杂的器官，感知能力无与伦比。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">曾有神经科学、认知心理学研究表明，80％ 以上的外界信息都是通过视觉进入了我们的大脑。但是，目前全世界大约有 3200 万盲人。如此巨大的一个数字，使得重建盲人的视觉系统成为医学领域重点关注的方向之一。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">在现有盲人人群中，大约有 200 万～400 万人是由于视网膜中光敏细胞丢失导致的失明。对于这种类型的失明，最有希望的治疗方法是将一种包含刺激视网膜细胞的电极的视网膜植入物放入眼睛中。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">现有的视网膜植入物通常由直接放置在视网膜上的电极网格组成。植入物通过电线与一副眼镜、一架照相机和一台便携式微型计算机相连。摄像头通过捕捉进入植入者视野的图像，将其发送到计算机，再由计算机转换为电信号，将其传输到电极。</span></p>\n<img src=\"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3461177213,1528805342&fm=26&gp=0.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">随后，电极根据视野中探测到的光模式刺激视网膜神经节细胞。最后，植入者要学习如何解释进入的视觉感觉，以便“看到”图像。图案越多、越详细，像素就越高越清晰。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">但就目前来说，现有的植入物产品效果并不佳，只能帮助患者恢复 20 度的视野，所以在某种意义上，这些佩戴者仍然被认为是盲人。针对这一难题，EPFL的研究人员研发了一种新型视网膜植入物。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">这种植入物和传统植入物一样，由像素阵列、眼镜和摄像头组成，但它没有导线。并且，新型视网膜植入物也有一个较大的表面积设计，以扩大视野和提高图像质量。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">不同的是，这种新型植入物使用了视野和分辨率这两个参数来评估他们的系统。其中包含了10500 个电极，每个电极都可以产生一个光点，从而可以使看到的图像更清晰。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">而在植入物选材方面，视网膜植入物的大小主要受到眼内手术切口长度的限制。切口必须尽可能小，才能避免损坏眼周组织。为此，研究人员选择使用了一种透明的、无毒的聚合物。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">这种聚合物已经在医学领域长期使，柔韧性非常强。这使得植入物能够在手术过程中进行折叠，从而增加植入物的体积，却不必延长切口长度。</span></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 0.19rem;font-family: -apple-system-font, \"Helvetica Neue\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;\">虽然该系统目前还没有在人体上进行测试，却已经显示出了具有巨大的发展潜能。让盲人重见光明听起来就极具科幻色彩，但是越来越多新型视网膜植入物的开发正让科幻落地现实。</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1615882911923,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 19
+    },
+    {
+      "title": "“科勒连夜拆除摄像设备”登上热搜，网友：光道歉拆除就行了？",
+      "categoryId": "3",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">3月16日，微博话题#科勒连夜拆除摄像设备#登上热搜榜。哈哈哈</span></p>\n<p></p>\n<img src=\"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=967739758,4240665767&fm=26&gp=0.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n<p><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">此前，3月15日，“315”晚会曝光了科勒等卫浴门店安装人脸识别摄像头的问题：</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">315晚会曝光，科勒卫浴在全国上千家门店安装了具有人脸识别功能的摄像头，消费者只要进了其中一家店，在不知情的情况下，就会被摄像头抓取并自动生成编号，以后顾客再去哪家店，去了几次，科勒卫浴都会知道。人脸信息属于个人独有的生物识别信息，一旦泄露，将严重威胁用户的财产安全、隐私安全等。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">3月16日早上，科勒（中国）投资有限公司官微发布声明称，关于科勒门店摄像设备采集人脸信息的问题，向广大消费者致歉。科勒高度重视晚会中提及问题，并第一时间整改。目前已安排相关门店连夜拆除该摄像设备。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">延伸阅读</span></p>\n<p></p>\n<img src=\"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3120728591,1474836920&fm=26&gp=0.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">人脸信息“裸奔”危害不容忽视</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">近日，据媒体报道，一些网络黑产从业者利用电商平台，批量倒卖非法获取的人脸等身份信息和“照片活化”网络工具及教程，可将人脸照片修改为执行“眨眨眼、张张嘴、点点头”等操作的人脸验证视频。警方侦查发现，有不法分子使用AI换脸技术，绕开多个社交服务平台或系统的人脸认证机制，为违法犯罪团伙提供虚假注册、刷脸支付等黑产服务。人脸数据、“照片活化”工具在网络平台待价而沽，甚至附带有操作教程，令人细思极恐。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">人脸识别技术“高歌猛进”</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">近年来，伴随人工智能的飞速发展，人脸识别技术日趋普及，被广泛应用于政务服务、办公出行、电子支付、智慧安防等诸多场景，极大提高了人们工作生活的便利性。据调研机构Gen Market Insights发布的《全球人脸识别设备市场研究报告》显示，全球人脸识别设备市场价值在2018年至2025年期间将以26.8%的速度增长，到2025年底将达到71.7亿美元。中国是人脸识别设备最大的消费区域，2023年占全球比例将达到44.59%，在2018年至2023年复合年增长率为29.53%。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">具体到国内，由于应用场景广阔、监管相对宽松等原因，生物识别技术的发展尤其迅速，目前已经普及化。如今，人脸的捕捉、特征的提取、特征的比对都已经进入300毫秒以内，人证比对的识别率也达到了99.99%。同时，诸多厂商纷纷将算法与硬件终端相结合，推出了一系列的人脸识别门禁、人脸识别闸机、人脸识别人证核验、人脸识别抓拍机等产品，这些都得到了广泛的应用。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">亿欧智库研究报告显示，人脸识别市场应用涵盖安防、金融、智慧园区、交通出行、互联网服务等多个领域。近期也有许多落地新闻：山东今年高考报名已采用人脸识别，不再要求考生在签到表按手印；影院复工，人脸识别售取票助力行业复苏；重庆移动打造的首个全场景双千兆平安小区，启用人脸识别检测高空抛物和人员锁定。根据前瞻产业研究院数据，到2024年，国内人脸识别市场规模将突破100亿元，人脸识别产业发展如火如荼。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">生物识别信息泄露“暗箭难防”</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">人脸识别站上风口，对于它的争议也未曾间断。2019年8月，AI换脸应用“ZAO”一度刷爆了朋友圈，随后很快无疾而终。究其原因，大张旗鼓搜集人脸数据的做法，引起了公众对这一技术的恐惧和反思。人脸识别技术在快速发展、深入社会的同时，给我们带来了诸多信息安全挑战。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">人脸识别技术的不过关易造成数据泄露。从央视“315”晚会曝光刷脸漏洞，到小学生用照片打开取件柜，再到“照片活化”攻破人脸识别，也说明某些技术本身并不过关，不仅易被破解，也容易让垃圾样本通过识别分类系统。其次，个人生物识别信息泄露后，还有可能被伪造甚至破解高级安全防护；更糟糕的是，黑色产业链中兜售的人脸数据不只是单纯的照片，而是绑定了身份证号、银行卡号、手机号等一系列敏感数据的“资料包”，可能会被不法分子用以盗取网络社交平台账号，窃取金融账户内财产，或者用于精准诈骗、敲诈勒索等违法犯罪活动。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">相关标准和规范的不完善为数据泄露埋下隐患。有关人脸识别技术的安全技术标准和使用规范不够完善，对于采集者的责任和义务，以及人脸数据在收集、存储、处理等各环节应采取的安全措施缺少相关规定。因此，对于一些安全能力薄弱、终端无安全防护措施的人脸识别公司而言，其大数据平台很容易被不法分子攻击利用，用户隐私极易泄露。近几年人脸数据库泄露事件也屡见不鲜，2019年，中国深网视界科技有限公司发生大规模数据泄露事件，超过256万人的个人信息可供任何人访问，例如身份证号码、性别、住址、生日、照片等，大约有668万条记录。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">应用过程的不规范为人脸数据滥用提供可能。一些机构或开发者出于“炫技术”“赶时髦”的目的使用人脸识别技术，忽略了公民对于人脸信息采集的选择权与知情权。南都传媒发布的《人脸识别落地场景观察报告（2019年）》数据显示，在公租房、交通、校园、商场等场景下，都各有半数以上的受访者表示没有或不清楚是否签署隐私政策；此外，很多应用软件，存在用户授权不到位、超范围收集、申请权限目的不明、滥用个人敏感信息的行为，使得人脸数据被动收集、使用成为常态。2020年6月，国内“人脸识别第一案”开庭引发广泛关注。因不愿意使用人脸识别，浙江理工大学特聘副教授郭兵将杭州野生动物世界公园诉至法院。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">深度伪造技术严重威胁用户财产甚至人身安全。许多企业在进行人脸识别验证的时候都需要配合活体检测，以防被图片蒙混过关。然而与人脸识别技术共同发展的，还有借助机器学习系统、图像视频更改人脸的“深度伪造”技术，其算法日趋成熟，并可达到几乎不能辨别真伪的程度。2020年初，浙江省衢州市中级人民法院判决一起侵犯公民个人信息的案件，四名被告人将购买的公民头像照片制作成3D头像，通过支付宝人脸识别认证，获取邀请新用户注册的红包奖励；此外，2019年的美国黑帽大会上，腾讯玄武实验室的安全人员就通过给“无意识”的人员戴上专门设计的眼镜，就能访问机主的iPhone，并通过移动支付应用程序向他们自己转账。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">由此可见，人脸识别技术给个人隐私和数据保护带来了巨大的挑战。此外，由于生物识别信息是惟一的、不可再生的，这就决定了人脸识别数据一旦丢失或者泄露，则是永久泄露，将贻害无穷，用户在使用生物信息作为身份认证的场合，可能被“李鬼”冒名顶替，身份安全形同“裸奔”。如果说，对指纹的破解是对身体实体的破解，那么对人脸和声音的破解则是对这个人的数据破解。这种不再为自己所独有的“失控”，加剧了各方的不安。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">风险治理亟需多管齐下</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">身处大数据时代，个人信息安全的重要性毋庸赘言。人脸信息触及个体的隐私底线，关系到每个人的生命财产安全。保障人脸信息安全，除了事后打击，事前防范也很重要，要强化全链条监管，多方共同作用，筑牢信息安全防火墙，切断人脸信息非法采集、销售的渠道，消除人脸识别技术误用、滥用的隐患，保护公民个人隐私、保障社会安全。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">提高公众的防范意识。追本溯源，要想有效预防人脸数据泄露，核心还在于用户自身提高警惕，强化忧患意识，对个人隐私进行有效保护，开启人脸验证时，尽可能选择多重验证方式，降低单重人脸验证风险；其次，用户要提高自我保护意识，不对隐私泄漏沉默认栽，坚决维护合法权益；最后，有关部门加大宣传力度，向公众普及生物数据信息重要性及有关风险，从源头上避免人脸信息泄露。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">加快厘清人脸识别边界。2021年施行的《民法典》界定了个人信息的范围，并将生物识别信息一并纳入其中。在这一背景下，应加快人脸识别技术标准制定的步伐，厘清合理采集和使用规则。首先，要规范说明有权利采集人脸信息的主体、需要满足的条件和范围、信息的规范存储和管理及泄露承担责任等；其次，立法机关需统筹考虑技术发展与信息安全，在个人信息保护法、数据安全法等法律中明确“刷脸”技术的边界、红线，并对泄露生物识别信息等行为规定罚则。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">建立信息安全监管体系。隐私的泄露者只能出自信息的采集者，这就要求采集者坚守道德底线，自觉建起信息安全的高墙；同时，监管部门对恶意泄露他人人脸和身份信息的违法行为以及倒卖人脸信息的黑色产业链也必须与时俱进予以坚决制止和严厉打击；最后，利用相关技术的网络平台也负有监管义务，绝不能忽视用户安全，应在制定人脸识别安全规范的过程中，强调人脸数据等生物特征信息与其他身份信息完全隔离存储，避免人脸数据与身份信息关联发生批量化泄露。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">提升技术先进性与可靠性。政府与人脸识别龙头企业合作推进技术标准的研究制定，建立个人影像数据管理机制，强化网络安全保障；作为行业开发者而言，要实现终端、传输、平台三位一体的安全防护，提高算法实力，搭建安全屏障；例如，阿里安全推出的人脸识别安全技术方案获得美国专利局授权，根据这个新的专利方案，只需要通过光影和手机位置变化，就可以有效防范此前技术上难以解决的3D人脸面具等攻击。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">人脸识别技术方兴未艾，只有确保其健康发展，才能实现“科技使生活更美好”，而不是陷入焦虑和恐慌；只有多管齐下，才能让其在数字基建的浪潮中有更广阔和安全的应用场景。全民刷脸的时代已经到来，但在隐私安全的路上，这项技术还有很长的路要走，相信未来人脸“裸奔”的时代终将彻底终结，人工智能安全新纪元必将全面开启。来源：北晚新视觉综合 央视财经 网友评论 科勒官微 人民网</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 1,
+      "publishState": 0,
+      "createTime": 1615886901985,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 20
+    },
+    {
+      "title": "美女",
+      "categoryId": "6",
+      "content": "<p><a href=\"http://localhost:3000/c89fd6f8e728471bb1ccfb74ec8c934c.mp4\" target=\"_blank\">美女</a>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615890996481,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 22
+    },
+    {
+      "title": "hhhhh",
+      "categoryId": "2",
+      "content": "<p>defrgthyjtyrtgdxfhjgutyrgtdxfngjmkuyhtdgxnfhmfjkutytydgfcnhgjfkuuytg</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615969172118,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 23
+    },
+    {
+      "title": "你知道么",
+      "categoryId": 5,
+      "content": "<p>去微软推哦怕立刻脚后跟范德萨自行车v吧</p>\n",
+      "region": "非洲",
+      "author": "zx",
+      "roleId": "2",
+      "auditState": 2,
+      "publishState": 1,
+      "createTime": 1615976927152,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 24
+    },
+    {
+      "title": "新华全媒+｜这次会议谋划了“十四五”碳达峰、碳中和工作“施工图”",
+      "categoryId": 1,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">新华社北京3月16日电　<strong>题：这次会议谋划了“十四五”碳达峰、碳中和工作“施工图”</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　新华社记者高敬</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　3月15日，习近平总书记主持召开中央财经委员会第九次会议，其中一项重要议题，就是研究实现碳达峰、碳中和的基本思路和主要举措，会议指明了“十四五”期间要重点做好的7方面工作。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　在业内专家看来，这次会议明确了碳达峰、碳中和工作的定位，尤其是为今后5年做好碳达峰工作谋划了清晰的“施工图”。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　“这次会议的一大亮点就是，把碳达峰、碳中和工作在国家经济社会中的定位说清楚了，明确把碳达峰、碳中和纳入生态文明建设整体布局，这事关中华民族永续发展和构建人类命运共同体。”国务院发展研究中心资源与环境政策研究所副所长常纪文说。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　我国力争2030年前实现碳达峰，2060年前实现碳中和。专家表示，从现在开始，到2030年前实现二氧化碳排放达到峰值，时间不满10年，但我国经济发展的同时，能源消费总量仍然处于上升通道，因此“十四五”时期二氧化碳排放控制如何，就显得格外重要，“十四五”是碳达峰的关键期、窗口期。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　今后5年，碳达峰重点工作在哪里？此次会议从能源体系、重点行业、绿色低碳技术、绿色低碳政策和市场体系、绿色低碳生活、生态碳汇能力、国际合作等7个方面进行了部署。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　在中国社科院学部委员、北京工业大学生态文明研究院院长潘家华看来，会议提出的举措非常精准。“碳达峰、碳中和工作没有捷径可走，首当其冲就是要控制化石能源消费。”他说。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　我国能源结构是以高碳的化石能源为主，化石能源占比约85%。能源的清洁低碳化，是会议对“十四五”碳达峰部署的第一项重点工作。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　会议提出完善能源“双控”制度。潘家华说，这表示今后既要控制能源消费强度，也要控制能源消费总量，这是一大进步。他指出，我们要重点控制的是化石能源消费总量，可再生能源则是多多益善，要实施可再生能源替代行动，同时要构建以新能源为主体的新型电力系统。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　工业、建筑、交通是我国主要终端能耗部门。会议提出，工业领域要推进绿色制造，建筑领域要提升节能标准，交通领域要加快形成绿色低碳运输方式。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　常纪文说，今后5年，工业领域的绿色供应链、建筑领域的绿色建筑等都大有文章可做。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　记者了解到，当前一些地方正在探索的绿色建筑，通过“黑科技”的加持，可以大大减少在取暖和制冷等方面的能源消耗。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　在交通领域，很多地方已经开始行动。比如今年起，作为全国汽车产业基地之一的长春市将加速出行方式电动化步伐，出租车和公务车原则上不再增加或更新燃油车。很多城市的公交车、出租车已经悄悄变身为电动车。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　与此同时，相关的政策体系也正在推进中，全国碳市场建设有望今年6月底前启动上线交易。专家还建议，要加快布局与碳达峰、碳中和相关的低碳前沿技术，加强应对气候变化国际合作。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　专家特别提醒，碳达峰不是攀高峰，“十四五”期间乃至很长一个阶段，如果不能遏制化石能源的增长，尤其是煤炭的增长，将对碳达峰产生巨大的压力。当前要防止形成碳锁定效应，坚决遏制高耗能、高排放项目盲目发展。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: PingFang SC\", \"Lantinghei SC\", \"Helvetica Neue\", Helvetica, Arial, \"Microsoft YaHei\", 微软雅黑, STHeitiSC-Light, simsun, 宋体, \"WenQuanYi Zen Hei\", \"WenQuanYi Micro Hei\", sans-serif;\">　　会议强调，实现碳达峰、碳中和是一场硬仗，也是对我们党治国理政能力的一场大考。对此，常纪文表示，各地要认识到降碳工作的长期性和艰巨性，增强绿色低碳发展的本领。</span>&nbsp;</p>\n",
+      "region": "非洲",
+      "author": "zx",
+      "roleId": "2",
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615983491251,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 25
+    },
+    {
+      "title": "如何打消群众对新冠疫苗安全性的顾虑？国家卫健委权威回应",
+      "categoryId": 6,
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">这个问题提的非常好。刚才我已经介绍了，我们国家新冠病毒疫苗接种的基本原则是“知情、同意、自愿”。接种人群的数量和群众接种意愿是直接相关的，所以在接种工作过程中我们一直在关注这个问题，也是接种工作的重点。我们一直在跟踪研究这个问题，根据现在了解的情况看，接种意愿受到的影响因素比较多，接种意愿变化也比较大。当前看，影响接种意愿的有两个主要因素：第一是疫情防控因素，我们国家目前采取了有力得当的疫情防控措施，所以我国的疫情总体平稳，部分群众就认为感染风险比较低，暂时不需要接种疫苗来增加保护力；第二是由于新冠病毒疫苗属于新上市疫苗，部分群众希望能够看到更多关于疫苗使用效果的信息，大家非常关注安全性、有效性等方面的数据，大家考虑对疫苗有更多了解之后再接种。当前主要是这两个方面因素有较大影响作用。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">在这里，我同大家交流一些情况：第一，从感染风险分析，无论对个人还是对整个社会人群来讲，虽然我国疫情形势总体平稳，但仍然存在疫情输入和局部流行风险，这对绝大多数人来讲，如果没有针对新冠病毒的免疫力，就都有患病可能，部分人群患病后可能比较严重。所以，预防新冠肺炎最好的办法就是接种疫苗。通过接种疫苗能够对个体进行有效保护，对人群也是能形成有效保护，接种疫苗能够降低感染率、重症率和病亡率。这也是我国当前防控新冠肺炎疫情最主要的策略，通过降“三率”进行有效保护。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">第二，涉及到人群问题，接种疫苗的人群越多，拥有免疫力的人就越多，这样就能够有效控制新冠病毒在人群中的传播，既起到了保护自己、保护家人的作用，同时也起到了保护他人、保护整个人群的作用。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">第三，从疫苗使用效果来看，目前我国使用的新冠病毒疫苗均已按照规范开展了临床研究，获得了国家药监部门的批准，并通过严格检定后才能使用。在疫苗储存和运输过程中要求定时检测、记录温度，确保新冠病毒疫苗在储存、运输全过程中处于规定温度环境和运输的相关要求。在接种过程中，我们加大了人员培训，要求医务人员要严格执行“三查七对一验证”的操作规程，通过规范的操作来充分保障疫苗的有效性和安全性。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">随着新冠病毒疫苗接种工作的全面开展，接种的人群也在不断地增加，相信疫苗使用的效果会得到更加突出的显现，希望更多的群众积极参与预防接种工作，让广大人民群众早日接种疫苗，我们一起来见证疫苗的保护效果。谢谢。</span>&nbsp;</p>\n",
+      "region": "南美洲",
+      "author": "fffff",
+      "roleId": "3",
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1615983640763,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 26
+    },
+    {
+      "title": "zx",
+      "categoryId": 2,
+      "content": "<p>xz</p>\n",
+      "region": "非洲",
+      "author": "zx",
+      "roleId": "2",
+      "auditState": 1,
+      "publishState": 0,
+      "createTime": 1616026343661,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 27
+    },
+    {
+      "title": "习近平：着力夯实创新发展人才基础",
+      "categoryId": 1,
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">编者按：创新之道，唯在得人。第6期《求是》杂志刊发了习近平总书记的重要文章《努力成为世界主要科学中心和创新高地》。文章强调：“全部科技史都证明，谁拥有了一流创新人才、拥有了一流科学家，谁就能在科技创新中占据优势。”一起来看！</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　牢固确立人才引领发展的战略地位，全面聚集人才，着力夯实创新发展人才基础。功以才成，业由才广。世上一切事物中人是最可宝贵的，一切创新成果都是人做出来的。硬实力、软实力，归根到底要靠人才实力。全部科技史都证明，谁拥有了一流创新人才、拥有了一流科学家，谁就能在科技创新中占据优势。当前，我国高水平创新人才仍然不足，特别是科技领军人才匮乏。人才评价制度不合理，唯论文、唯职称、唯学历的现象仍然严重，名目繁多的评审评价让科技工作者应接不暇，人才“帽子”满天飞，人才管理制度还不适应科技创新要求、不符合科技创新规律。要创新人才评价机制，建立健全以创新能力、质量、贡献为导向的科技人才评价体系，形成并实施有利于科技人才潜心研究和创新的评价制度。要注重个人评价和团队评价相结合，尊重和认可团队所有参与者的实际贡献。要完善科技奖励制度，让优秀科技创新人才得到合理回报，释放各类人才创新活力。要通过改革，改变以静态评价结果给人才贴上“永久牌”标签的做法，改变片面将论文、专利、资金数量作为人才评价标准的做法，不能让繁文缛节把科学家的手脚捆死了，不能让无穷的报表和审批把科学家的精力耽误了！</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　创新之道，唯在得人。得人之要，必广其途以储之。要营造良好创新环境，加快形成有利于人才成长的培养机制、有利于人尽其才的使用机制、有利于竞相成长各展其能的激励机制、有利于各类人才脱颖而出的竞争机制，培植好人才成长的沃土，让人才根系更加发达，一茬接一茬茁壮成长。要尊重人才成长规律，解决人才队伍结构性矛盾，构建完备的人才梯次结构，培养造就一大批具有国际水平的战略科技人才、科技领军人才、青年科技人才和创新团队。要加强人才投入，优化人才政策，营造有利于创新创业的政策环境，构建有效的引才用才机制，形成天下英才聚神州、万类霜天竞自由的创新局面！</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　（策划：杨绍华 盛玮）</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1616153930276,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 28
+    },
+    {
+      "title": "建设更高水平的平安中国",
+      "categoryId": 4,
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(171,171,171);background-color: rgb(255,255,255);font-size: 12px;font-family: PingFang SC\", \"Lantinghei SC\", \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">2021年02月01日 11:53:34</span> <span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: PingFang SC\", \"Lantinghei SC\", \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">来源： 解放军报　作者： 国防大学习近平新时代中国特色社会主义思想研究中心</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<iframe width=\"220\" height=\"30\" src=\"http://www.qstheory.cn/n7/v7_search_frame.html\" frameBorder=\"0\"></iframe>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<p></p>\n<p></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>　内容提要</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　随着我国进入以高质量发展为主题的新发展阶段，建设更高水平的平安中国成为时代必然。要把安全发展贯穿国家发展各领域和全过程，防范和化解影响我国现代化进程的各种风险，筑牢国家安全屏障。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　党的十九届五中全会鲜明提出：“统筹发展和安全，建设更高水平的平安中国。”这是以习近平同志为核心的党中央着眼构建新发展格局、统筹国内国际两个大局、办好发展安全两件大事作出的重大决策，体现了我们党善于从战略全局高度主动运筹国家安全工作的政治勇气和高超智慧，为我们在新发展阶段维护和塑造国家安全指明了方向、提供了遵循。</span></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>深刻认识建设更高水平的平安中国的重要意义</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　党的十八大以来，在以习近平同志为核心的党中央坚强领导下，平安中国建设取得历史性成就：平安建设的体制机制逐步完善，风险防控的整体水平稳步提升，保障力量的综合实力显著提高，人民群众的获得感、幸福感、安全感不断增强。随着我国进入以高质量发展为主题的新发展阶段，建设更高水平的平安中国成为时代必然。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　建设更高水平的平安中国，是应对复杂多变国家安全形势的必然要求。当前，世界百年未有之大变局加速演进，国际环境中的不稳定性不确定性明显增加。新冠肺炎疫情影响广泛深远，经济全球化遭遇逆流，世界进入动荡变革期，单边主义、保护主义、霸权主义对世界和平与发展构成威胁。近年来，随着我国综合国力大幅提升，各种可以预见和难以预见的风险因素明显增多，各类安全风险的危害性、联动性、总体性也明显增强。顺应国家安全形势的发展变化，平安中国建设必须有更高的水平。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　建设更高水平的平安中国，是满足人民日益增长的美好生活需要的必然要求。经过几十年不懈奋进，中国特色社会主义进入新时代，我国社会主要矛盾已经转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。人民美好生活需要，已经由传统物质需要，上升到对民主、法治、公平、正义、社会稳定和谐等方面的需要；人民对平安的需要，呈现出多样化、多层次、多方面的特点，平安已经从传统意义上的生命财产安全，上升到安居、乐业、安康、安心等各方面，涉及就业、住房、医疗、教育、卫生、健康等各行业，内涵外延不断拓展，标准要求更新更高。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　建设更高水平的平安中国，是全面建设社会主义现代化国家的必然要求。一方面，建设更高水平的平安中国，是社会主义现代化的重要内容。社会主义现代化是一个综合体系，既包含国家经济科技实力、创新能力、国家治理体系和治理能力，也包括国民素质、社会文明程度、生态环境，还包括人民生活质量、共同富裕程度以及国家安全水平等各方面的能力或状态。建设更高水平的平安中国，是全面建设社会主义现代化国家的国家安全指标，是社会主义现代化的题中应有之义。另一方面，建设更高水平的平安中国，是社会主义现代化的重要保障。安全是发展的前提，没有安全就没有发展。党的十九届五中全会明确要求“把安全发展贯穿国家发展各领域和全过程”，这是我们党治国理政的经验总结，也是我们党对安全与发展辩证关系的深刻把握。只有在平安中国建设上有更高标准、更硬举措、更强力量，全面建设社会主义现代化国家才能有更优良的环境条件、更可靠的安全保障。</span></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>深入理解建设更高水平的平安中国的深刻内涵</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　平安中国建设是一个动态发展、不断升级的过程。当前，我国面临的国内国际环境发生深刻变化，建设更高水平的平安中国具有丰富而深刻的内涵。一是更高起点，在经济快速发展、社会长期稳定“两大奇迹”基础上谱写新篇章，提升平安中国建设的层次和质效。二是更广领域，突出“大安全观”，统筹内部安全和外部安全，统筹传统安全和非传统安全。三是更富实效，既要解决现实问题，又要预防潜在风险，将平安中国建设关口前移，塑造平安中国建设有利态势。四是更可持续，着眼构建平安中国建设的长效机制，实现国家社会长治久安。五是更加满意，紧扣人民群众对平安中国建设的关切和感受，在共建共治共享中不断提升人民群众的获得感、幸福感、安全感。具体而言，建设更高水平的平安中国应着重在以下三个方面更有成效。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　政治更安全。政治安全，是指一个国家由政权、政治制度和意识形态等要素组成的政治体系，相对处于没有危险和不受威胁的状态，以及面对风险和挑战时能够及时有效防范应对，从而确保国家良好政治秩序的能力。政治安全的核心是政权安全和制度安全。政治安全作为国家上层建筑领域安全，对保障国家安全具有根本性、决定性意义。建设更高水平的平安中国，首先就要确保在政治上更安全。必须毫不动摇坚持中国共产党的领导，维护中国特色社会主义制度，发展社会主义民主政治，为确保政治上更安全提供根本保证。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　社会更安定。社会安定，是指我国社会公共秩序和人民生命财产安全相对处于没有危险和不受威胁的状态，以及维持这一安全状态的能力。社会安定是国家安全的重要基础，包括防范、消除、控制直接威胁社会公共秩序和人民生命财产安全的治安、刑事、暴力恐怖活动、大规模群体性事件，以及社会骚乱、动荡。社会安全工作涉及打击犯罪、维护稳定、社会治理、公共服务等各方面工作，涉及生产、流通、工作、生活各个环节，既事关每名社会成员的切身利益，也事关国家经济发展和社会稳定。建设更高水平的平安中国，要求实现社会更安定，为人民群众创造更安全、更安心的生产生活环境和社会秩序。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　人民更安宁。人民安宁，就是要坚持人民至上、生命至上，把保护人民生命安全摆在首位，全面提高公共安全保障能力；就是要维护和发展最广大人民的根本利益，创造良好生存发展条件和安定工作生活环境，保障人民的生命财产安全和其他合法权益。人民群众是社会历史的创造者，建设更高水平的平安中国，归根结底是为了人民更安宁。这是坚持以人民为中心的发展思想在国家安全领域的体现，也是中国共产党全心全意为人民服务根本宗旨的必然要求，是国家安全工作的根本出发点和落脚点。同时，只有人民更安宁，才能进一步汇聚起建设更高水平的平安中国的无穷力量。只有人民更安宁，社会更安定、政治更安全也才更有保障。</span></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>全面落实建设更高水平的平安中国的实践举措</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　建设更高水平的平安中国，要求坚持总体国家安全观，统筹传统安全和非传统安全，把安全发展贯穿国家发展各领域和全过程，防范和化解影响我国现代化进程的各种风险，筑牢国家安全屏障。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　加强党对国家安全工作的集中统一领导。党政军民学，东西南北中，党是领导一切的。中国共产党领导是中国特色社会主义最本质的特征，是中国特色社会主义制度的最大优势。中国共产党是最高政治领导力量，国家安全工作必须置于党的集中统一领导之下。国家安全关系国家的根本利益，是国家发展的基本前提，是安邦治国的重要基石。必须坚持党对国家安全工作的领导，建立集中统一、高效权威的国家安全领导体制，确保平安中国建设沿着正确的方向前进，从而充分调动各方力量、举国资源来维护国家安全。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　健全完善国家安全机制。国家安全机制是维护和塑造国家安全的重要支撑。《中华人民共和国国家安全法》规定，国家建立国家安全重点领域工作协调机制，建立国家安全工作督促检查和责任追究机制，建立跨部门会商工作机制，建立中央与地方之间、部门之间、军地之间以及地区之间关于国家安全的协同联动机制，建立国家安全决策咨询机制等，从制度层面建立起维护国家安全的保护网。建设更高水平的平安中国，还应不断健全完善情报信息、风险防范评估和预警、审查监管、危机管控等制度机制，加强各项工作机制和制度间的有效衔接与相互融合，发挥国家安全机制最大效能。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　筑牢国家安全保障。习主席指出，要加大对维护国家安全所需的物质、技术、装备、人才、法律、机制等保障方面的能力建设，更好适应国家安全工作需要。当前，国家安全的内涵和外延不断拓展，迫切要求形成一个以法制保障、经费保障、装备保障、物资保障、科技保障、人才保障等领域为重点的广泛、周密、完整的保障体系，从而增强维护国家安全的整体能力。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　强化人民群众、各类组织维护国家安全的责任。人民群众、各类组织作为国家安全事务的参与者和管理者，是维护国家安全的力量源泉和坚强后盾，必须根据《中华人民共和国国家安全法》的相关规定承担起维护国家安全的责任和义务。要加强国家安全的宣传教育和舆论引导，将国家安全教育纳入国民教育体系和公职人员教育培训体系；结合每年4月15日的全民国家安全教育日，通过多种形式开展国家安全宣传教育活动，使广大人民群众、各类组织明确维护国家安全的责任、增强维护国家安全的意识。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　（执笔：孙文广、尹正达、周德昂）</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1616154035336,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 29
+    },
+    {
+      "title": "发展乡村产业须破解用地难题",
+      "categoryId": 2,
+      "content": "<p></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(171,171,171);font-size: 12px;\">2021年03月16日 09:47:38</span> 来源： 经济日报　作者： 乔金亮</p>\n<p></p>\n<p style=\"margin-left:0px;\"></p>\n<iframe width=\"220\" height=\"30\" src=\"http://www.qstheory.cn/n7/v7_search_frame.html\" frameBorder=\"0\"></iframe>\n<p></p>\n<p style=\"margin-left:0px;\"></p>\n<p></p>\n<p style=\"text-align:start;\"></p>\n<p></p>\n<p></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　国家支持乡村产业发展，并不意味着要在农村实行大规模非农用地扩张，大量增加新增建设用地指标。政策的目的是推进农业农村现代化，满足富民乡村产业发展的用地需求，而不是把城市的产业用地政策简单移植到农村，不是让所有产业一股脑地去农村争地搞建设。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　刚刚通过的“十四五”规划和2035年远景目标纲要提出，完善农村用地保障机制，保障设施农业和乡村产业发展合理用地需求。此前发布的2021年中央一号文件明确，完善盘活农村存量建设用地政策，实行负面清单管理，优先保障乡村产业发展、乡村建设用地。可以说，乡村产业用地正迎来新一轮政策机遇。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　总体看，乡村产业用地既有农业用地，也有非农建设用地，乡村产业用地难主要是非农用地获得难。除了传统的种植养殖以外，很多乡村新产业新业态以及配套服务设施均属于非农建设用地范畴。过去很多地方奉行工业和城市优先，在城市建设用地指标紧缺的情况下，乡村普遍很难获得建设用地指标。新增建设用地指标在优先满足城镇商住、工业用地以及基础设施等建设用地后，能够用于农村二三产业发展的指标已所剩无几。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　针对这一难题，各地也想了很多办法，但并不尽如人意。不少地方通过整治“空心房”和宅基地，腾出了一些建设用地指标，但多用于城镇建设，而少用于农村产业。即便一些地方在乡镇土地利用规划中为农村新产业新业态预留了少量用地指标，但由于缺少细化的村级规划，也难以发挥实效。随着农村一二三产业融合发展，原有的用地类型与土地供给方式已不能适应实际需要。支持乡村产业融合发展，需要给予一定的建设用地保障，这已成为业内共识。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　“地得其任则功成，地不得其任则劳而无功。”完善农村用地保障机制，既要坚持城乡融合，又要体现城乡有别，以县域为单元统筹考虑，针对不同类型和特点的产业提供不同的空间载体和用地途径。眼下的情况是，一方面农村集体建设用地存在粗放利用、闲置浪费现象，另一方面是富民乡村产业用地难保障。因此，在具体方式上，首先是优化存量，要靠内部挖潜、节约集约，拓展集体建设用地使用方式、盘活存量建设用地资源；其次，需要给一些新增建设用地指标，保障必要的、急需的产业融合项目及时落地，做好必要的增量。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　一个典型例子是乡村旅游点状供地模式。目前，浙江、四川等地正在开展乡村旅游项目点状供地模式，有效解决乡村旅游项目用地分散、单幅用地数量不多等问题，改变传统整片供地方式，节省了用地主体的前期资金投入。在试点地区，保护优先、集约用地已在乡村旅游开发中形成共识。这些地方明确，要以盘活存量用地或优化存量用地为主导，最大限度地利用闲置乡村土地；项目建设要生态化，建设规模要减量化，避免用城市化的手法来发展乡村旅游；基础设施要能够与民用设施共享，总体上减少土地开发量。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　要强调的是，国家支持乡村产业发展，并不意味着要在农村实行大规模非农用地扩张，大量增加新增建设用地指标。农村二三产业的发展，必须坚持粮食安全、生态安全、规范用地的原则，确保其在不占用永久基本农田、不突破建设用地规模、不破坏生态环境的前提下开展。比如，放宽设施农业用地，并不是允许以设施农业为名在耕地上搞非农建设。又如，为防止有的地方借机到农村圈地搞房地产，农村产业融合发展用地政策不适用于房地产业。总之，政策的目的是推进农业农村现代化，满足富民乡村产业发展的用地需求，而不是把城市的产业用地政策简单移植到农村，不是让所有产业一股脑地去农村争地搞建设。</span></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1616154082799,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 30
+    },
+    {
+      "title": "为人类减贫事业提供中国范例",
+      "categoryId": 2,
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(171,171,171);background-color: rgb(255,255,255);font-size: 12px;font-family: PingFang SC\", \"Lantinghei SC\", \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">2021年03月01日 11:16:20</span> <span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: PingFang SC\", \"Lantinghei SC\", \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">来源： 光明日报　作者： 任晶晶</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<iframe width=\"220\" height=\"30\" src=\"http://www.qstheory.cn/n7/v7_search_frame.html\" frameBorder=\"0\"></iframe>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<p></p>\n<p></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　2月25日上午，全国脱贫攻坚总结表彰大会在北京隆重举行。习近平总书记发表重要讲话，总结我国脱贫攻坚取得的重大历史性成就，阐述中国特色减贫道路、中国特色反贫困理论，揭示伟大脱贫攻坚精神。中国向全世界庄严宣告，中国脱贫攻坚战取得了全面胜利，完成了消除绝对贫困的艰巨任务，创造了又一个彪炳史册的人间奇迹！</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　这不仅是中华民族发展史上的璀璨华章，也是人类发展史上的宝贵财富。当前，在“两个一百年”的历史交汇点上，深入总结中国脱贫攻坚的时代价值和世界意义，不仅对我国构建持续减贫长效机制和实现共同富裕具有重要现实意义，同时也有助于为全球贫困治理和减贫事业贡献更多中国智慧和中国经验。</span></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>为推动全球减贫事业发展作出重大贡献</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　贫困是困扰人类社会发展的一大顽疾。一部人类史，就是一部人类不断摆脱贫困、实现自我解放和发展的历史。消除贫困是人类的共同使命，是当今世界面临的最大全球性挑战。中国共产党始终把带领中国人民摆脱贫困作为自己的重要使命。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　新中国成立后，特别是改革开放以来，党和国家有计划、有组织地在全国范围内开展了大规模扶贫开发工作。党的十八大以来，以习近平同志为核心的党中央把脱贫攻坚摆在治国理政突出位置，从全面建成小康社会要求出发，把扶贫开发作为实现第一个百年奋斗目标的重点任务，将其纳入“五位一体”总体布局和“四个全面”战略布局，采取了一系列具有原创性、独特性的重大举措，组织实施了人类历史上规模最大、力度最强、惠及人口最多的脱贫攻坚战。8年来，我国现行标准下9899万农村贫困人口全部脱贫，832个贫困县全部摘帽，12.8万个贫困村全部出列，区域性整体贫困得到解决。过去70多年，中国减少8.5亿贫困人口，对全球减贫贡献率超过70%。按照中国现行贫困标准，从2012年到2019年，中国平均每年1000多万人脱贫，相当于一个中等国家的人口脱贫。困扰中华民族几千年的绝对贫困问题得到历史性解决，为全面建成小康社会作出了重要贡献，为开启全面建设社会主义现代化国家新征程奠定了坚实基础。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　如此巨大的脱贫规模，不仅在中国历史上前所未有，在人类历史上也从未出现过。纵览古今、环顾全球，世界上没有哪一个国家能在这么短的时间内实现这么多人脱贫，中国创造了人类历史上迄今为止最为成功的脱贫奇迹。中国如期完成新时代脱贫攻坚目标任务，显著缩小了世界贫困人口的总体规模，在近年来全球贫困人口不降反增、世界减贫事业遭遇瓶颈的背景下，有力地推动了全球减贫事业的发展进程，坚定了国际社会消除贫困的信心，促进了人类福祉的整体性提升，为国际减贫事业提供了生动鲜活的中国范例和中国注解。</span></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>拓展了人类反贫困的理论视野和实践路径</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　贫困是一种世界性现象，反贫困应采取系统性思维与方法。在西方广为流行的“涓滴理论”认为，贫困问题的解决单纯依靠经济增长，在经济持续增长的条件下，即使没有社会政策的干预，经济发展的“滴漏效应”也会影响到贫困阶层，从而使得贫困问题随着经济的增长而自然得到解决。由于这一理论在资本主义条件下仅从经济学视角审视和思考贫困问题，使贫困人口处于被动接受状态，因而在实践中难以从根本上消除贫困、遏制返贫。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　党的十八大以来，习近平总书记对扶贫工作作出一系列重要论述，坚持精准扶贫、精准脱贫，坚持政府作用和市场力量有机统一，坚持扶贫与扶志扶智相结合，拓展了中国特色扶贫开发道路，丰富和发展了马克思主义反贫困思想和减贫理论，为人类减贫事业贡献了可资借鉴的宝贵经验。在发展中国家中，只有中国实现了快速发展和大规模减贫同步、贫困人口共享改革发展成果，这是一个了不起的人间奇迹。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　作为拥有14亿人口的世界最大发展中国家，发展是解决包括贫困问题在内的中国所有问题的关键。经济增长是减贫的重要物质基础，但并非实现经济增长就一定能解决贫困问题。其原因在于，经济增长偏重效率逻辑，而扶贫减贫偏重公平逻辑。中国之所以能创造减贫奇迹，就在于中国特色社会主义制度能够将这两大逻辑有机统一起来。中国共产党带领中国人民既致力于推动经济持续较快发展、把“蛋糕”做大，又致力于促进人民共享改革发展成果、把“蛋糕”分好，更致力于实现权利公平、机会公平、规则公平，不断增强发展的公平性、包容性、可持续性。正是在经济发展和扶贫减贫的良性互动中，中国走出了一条中国特色的扶贫开发道路。事实证明，精准扶贫是打赢脱贫攻坚战的制胜法宝，开发式扶贫方针是中国特色减贫道路的鲜明特征。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　近年来，中国减贫成功经验已成为越来越多国家和国际组织的研究样本，并在一些发展中国家生根发芽、开花结果。联合国秘书长古特雷斯表示，精准扶贫方略是帮助最贫困人口、实现2030年可持续发展议程设定的宏伟目标的唯一途径，中国的经验可以为其他发展中国家提供有益借鉴。</span></p>\n<p style=\"margin-left:10px;\">&nbsp;<span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\"><strong>为推动构建人类命运共同体描绘了崭新前景</strong></span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　贫困问题，归根结底是发展问题。中国的发展没有掠夺、没有扩张，更没有战争和殖民，而是把发展着眼于自身，通过不断改革体制机制，解放和发展社会生产力；通过不断扩大对外开放，深度参与经济全球化和全球治理；如今更是加快构建以国内大循环为主体、国内国际双循环相互促进的新发展格局。中国在与世界各国的互利合作中，既不断发展自己，又推动世界共同发展。中国认为，在经济全球化背景下，各国经济彼此依存，利益相互交融，唯有以诚相待、普惠共享才是根本之计。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　中国以构建人类命运共同体的责任担当积极同联合国、世界银行以及广大发展中国家开展减贫交流合作，推动设立“中国-联合国和平与发展基金”“南南合作援助基金”“中国-东盟社会发展与减贫论坛”“中非减贫惠民合作计划”等一系列国际减贫合作机制与项目，同国际社会分享减贫经验，向其他发展中国家提供不附带任何政治条件的援助，支持和帮助广大发展中国家特别是最不发达国家消除贫困。2013年以来，中国倡导共建“一带一路”，发起设立亚洲基础设施投资银行、金砖国家新开发银行等，推动更大范围、更高水平、更深层次的区域经济社会发展合作，支持发展中国家开展基础设施互联互通建设，帮助其增强内生发展动力。目前，中国已经为120多个发展中国家实施千年发展目标提供了帮助。世界银行研究报告显示，“一带一路”倡议全面实施将使相关国家的760万人摆脱极端贫困，3200万人摆脱中度贫困。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　中国认为一国发展不能建立在其他国家贫困的基础上。当前，全球化遭遇逆流，新冠肺炎疫情蔓延加深了国家间的隔膜与隔阂，国家间的“信任赤字”扩大，部分发展中国家担心因“被抛弃”而“掉队”。美西方国家竭力维护自身经济和科技霸权，奉行你输我赢、赢者通吃的零和思维，不择手段打压和遏制他国发展，妄图以牺牲他国利益为代价实现自身发展。如果这样的图谋得逞，必将扩大发展不平衡的鸿沟，损害全人类的利益。中国依靠自身发展解决贫困问题，用“真扶贫”“扶真贫”的实干精神，走出了一条互利共赢的发展道路，开辟了人类社会发展的光明前景，使广大发展中国家看到了脱贫减贫的曙光，促进了全球进步与正义事业的发展。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　雄关漫道真如铁，而今迈步从头越。中国如期完成新时代脱贫攻坚目标任务，彻底消除绝对贫困，不仅是中华民族发展史上的里程碑，更是对人类发展事业的重大贡献；不仅为实现第一个百年奋斗目标打下了坚实基础，也为世界减贫事业贡献了中国智慧，给渴望摆脱贫困的各国人民提振了信心、激发了动力。展望未来，在全面建设社会主义现代化国家的新征程上，中国将一如既往携手世界各国致力于消除贫困、促进发展，共同书写中国和世界在新的更高水平的互动中相互成就、共同进步的历史新篇章，为共建一个没有贫困、共同发展的人类命运共同体而不懈奋斗。</span></p>\n<p style=\"margin-left:10px;\"><span style=\"color: rgb(43,43,43);background-color: rgb(255,255,255);font-size: 16px;font-family: PingFang SC\", \"Lantinghei SC\", simsun, \"Microsoft YaHei\", Helvetica, Arial, sans-serif;\">　　（作者：任晶晶，系中国社会科学院习近平新时代中国特色社会主义思想研究中心特约研究员、中国社会科学院当代中国研究所副研究员）</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1616154138178,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 31
+    },
+    {
+      "title": "NFL新签转播合同，11年总金额1130亿美元",
+      "categoryId": 5,
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">NFL新电视转播协议。网络截图</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">新京报讯（记者 王继松）当地时间3月18日，NFL（美国职业橄榄球大联盟）宣布与亚马逊、CBS、ESPN/ABC、福克斯和NBC签署了一项新的长期转播协议。新协议将从2023赛季持续到2033赛季。据多家媒体报道，NFL这份新电视转播协议总金额达到1130亿美元。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">NFL总裁罗杰·古德尔在一份声明中表示：“这份新的合约将为所有球迷带来更棒的体验，我们很高兴能和这些最顶尖的公司继续合作，这将推动整个联盟的稳定发展。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">据报道，与4家电视台目前套餐到期时支付的431亿美元相比，传统转播权持有者已同意为继续播出NFL赛事支付约895亿美元。根据这份合同，各平台为NFL所支付的版权费用也水涨船高。亚马逊Prime将独家播出“周四夜赛”，费用从FOX时代的每年6.6亿美元增长到13.2亿美元。而FOX和CBS将共同播出“周日下午”时段的赛事，所支付的费用也分别从每年11.3亿美元和10.3亿美元增加到20.3亿美元和18.5亿美元。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">未来“超级碗”比赛将会在4个不同的电视台播出。其中，CBS播出2023年、2027年、2031年的超级碗赛事；FOX播出2024年、2028年、2032年；NBC播出2025年、 2029年、2033年；ESPN/ABC播出2026年、2030年赛事。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">NFL水涨船高的版权费用离不开赛事的影响力和吸金能力。数据显示，在2020年收视率最高的100场转播中，NFL赛事独占71场，而且还为播出平台创造了近40亿美元的广告收入。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">新京报记者 王继松</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">编辑 王希翀 校对 吴兴发</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1616154268602,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 32
+    },
+    {
+      "title": "什么是柯伊伯带？",
+      "categoryId": 3,
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">1930年冥王星被发现后，天文学家开始推测，这颗行星只是海王星外围绕太阳运行的众多行星中的一个而已。数十年过去，众多学者对这一观点进行过研究和修正，而荷兰天文学家赫拉德·柯伊伯的名字与海王星外的这片区域联系最为紧密，现在我们仍把这片区域叫作“柯伊伯带”。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: arial;\">那么柯伊伯带有什么特别之处呢？</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">柯伊伯带位于海王星轨道之外，到太阳的距离大约是地球到太阳的55倍。天文学家预测柯伊伯带中直径超过100千米的天体可能多达10万个，直径从几千米到2000多千米不等。柯伊伯带中最著名的天体有冥王星、妊神星和鸟神星。此外，天文学家认为海王星的卫星海卫一是一个被俘获的柯伊伯带天体。然而，它们的总质量还不到地球的1/10。天文学家还提出，这些天体就像行星一样，是由星子组成的，但是因为离太阳很远的地方的星子数量太少，所以它们的个头就比行星小得多。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">柯伊伯带是太阳系的边缘吗？并不是。根据目前的发现，太阳系最远处的奥尔特云，距离太阳有5万至10万天文单位，最远处超过了1光年。奥尔特云中存在很多彗星。可以说，这些物质是50亿年前太阳和行星形成之后残留下来的。科学家认为，由于太阳系内行星间的引力作用，把许多柯伊伯带天体弹射到太阳系引力范围的最远端，形成了遥远的奥尔特云。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">柯伊伯带和分布在火星与木星之间的小行星带有些类似，都是太阳系小天体的聚合地带，而且这些小天体都是太阳系形成初期的残余物质。区别只是小行星带的天体主要是由岩石和金属构成的，而柯伊伯带的天体主要是冻结的低沸点混合物，主要成分是水、氨和甲烷。太阳系的大多数彗星都来源于这里。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">2008年起，由夏威夷大学天文学研究所主导的“泛星计划”（全景巡天望远镜和快速反应系统）开始对天空进行快速的定期扫描，搜寻各种天体，包括可能会威胁地球的小行星。该计划的副产品是绘制了一幅天空中暗弱天体的详尽星图，包括柯伊伯带天体。“泛星计划”天文台台长肯·钱伯斯博士称，“‘泛星计划’新发现了很多从太阳系内的近地天体和柯伊伯带天体到恒星之间的孤独行星；它还标示出了银河系灰尘的三维形式，发现了新的恒星流、早期宇宙正在爆发的恒星以及遥远的类星体。”</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">那么科学家们为什么要研究柯伊伯带呢？因为科学家认为，柯伊伯带留住了太阳系曾经的样子。柯伊伯带天体被认为是太阳系形成时遗留下的残余物，有助于科学家了解行星形成之初的情况。科学家预测，柯伊伯带应该存在半径为1千米到几千米的天体，这些天体是行星形成过程中重要的一环。2019年，日本天文学家首次在柯伊伯带发现了一颗半径为1.3千米的天体，填补了行星形成过程中“缺失的一环”。研究结果表明，千米尺寸的柯伊伯带天体比以前想象的要多得多。这一发现也为一个模型提供了佐证，即星子首先缓慢地变大成千米大小的物体，然后暴长并聚合成行星。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:justify;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">本文由中国人民大学附属中学第二分校一级教师王和意进行科学性把关。</span>&nbsp;</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1616154335766,
+      "view": 0,
+      "star": 0,
+      "publishTime": 0,
+      "id": 33
+    }
+  ]
+}
